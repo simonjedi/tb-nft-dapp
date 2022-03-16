@@ -10,7 +10,7 @@ import React, { Component, useState, useEffect } from 'react'
 
 import getWeb3 from "./getWeb3";
 
-// 
+//  
 import SingleNFT from './SingleNFT';
 
 // import { NftProvider, useNft } from "use-nft"
