@@ -16,7 +16,7 @@ import SingleNFT from './SingleNFT';
 // import { NftProvider, useNft } from "use-nft"
 
 import Connection from "./Connection";
-
+ 
 import { useWallet, UseWalletProvider } from 'use-wallet'
 
 import img1 from './components/Structure/images/PowerPose.gif';
