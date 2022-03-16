@@ -1,0 +1,227 @@
+.customRounded{
+  border-radius: 15px 50px 0px 0px;
+  border:0;
+}
+
+.cardRounded{
+  border-radius: 15px 50px 10px 10px;
+  border:0;
+  background-color: #001219;
+  margin:10px;
+
+}
+
+.spaceTop{
+  margin-top: 100px;
+}
+
+.customButton{
+  background-color: #ee9b00;
+  border-color: #ee9b00;
+  outline-color: #ee9b00;
+  color: #001219;
+  height: 40px;
+  width: 150px;
+  font-size: 1.2rem;
+}
+
+
+.customButton:hover{
+  background-color: #005f73;
+  border-color: #005f73;
+  outline-color: #005f73;
+  color: white;
+  animation: wobble 1s 1;
+}
+
+.customButtonBlog{
+  background-color: #ee9b00;
+  border-color: #ee9b00;
+  outline-color: #ee9b00;
+  color: #001219;
+  height: 40px;
+  width: 150px;
+  font-size: 1rem;
+}
+
+.customButtonBlog:hover{
+  background-color: #005f73;
+  border-color: #005f73;
+  outline-color: #005f73;
+  color: white;
+  animation: wobble 1s 1;
+}
+
+
+@keyframes wobble {
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.tinyCustomButtonDescription{
+  background-color: #94d2bd;
+  border-color: transparent;
+  outline-color: #94d2bd;
+  color: #001219;
+  margin-right:5px;
+  margin-left:5px;
+}
+
+.tinyCustomButtonDescription:hover{
+  background-color: #005f73;
+  border-color: #005f73;
+  outline-color: #005f73;
+  color: white;
+
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+.customToolTip{
+  background-color: #0a9396;
+  border-color: #0a9396;
+  outline-color: #0a9396;
+  color: #001219;
+  height: 40px;
+  font-size: 1.3rem;
+  float: right;
+  margin-top: 10px;
+}
+.customToolTip:hover{
+  background-color: #005f73;
+  border-color: #005f73;
+  outline-color: #005f73;
+  color: white;
+}
+.prePrize{
+  font-size: 1rem;
+  color: #005f73;
+  float: right;
+}
+.gamePrize{
+  font-size: 2.7rem;
+  color: #ee9b00;
+}
+.gamePrizeBnb{
+  font-size: 2rem;
+  color: #ee9b00;
+  text-align: center;
+}
+.gamePrizeDark{
+  font-size: 2.7rem;
+  color: #0a9396;
+}
+.gamePrizeDarkBnb{
+  font-size: 2rem;
+  color: #0a9396;
+}
+.attemptPrize{
+  font-size: 1.3rem;
+  color: #bb3e03;
+}
+.postPrize{
+  font-size: 1rem;
+  color: #bb3e03;
+
+}
+
+
+
+.blogTitle{
+  font-size: 1.4rem;
+}
+
+.gameText{
+  font-size: 1.3rem;
+  color: #001219;
+}
+
+.readMe{
+  color: #ca6702;
+}
+
+.readMeSmall{
+  font-size: 1rem;
+  color: #005f73;
+}
+.hash{
+  font-size: .8rem;
+  color: #005f73;
+
+}
+
+.customBodyThree {
+  background-color: #001219;
+  border-width: 0px;
+  color: white;
+  border-radius: 15px 50px 10px 10px;
+  text-align: center;
+
+}
+
+.descriptionTitle{
+  font-size: 1.3rem;
+  color: #ee9b00;
+  float: center;
+}
+.descriptionBody{
+border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+.lineThrough{
+  text-decoration: line-through
+}
+
+
+.siteTitle{
+  font-size: 1.8rem;
+  color: #000000;
+  text-align: left;
+
+}
+
+.homeSubTitle{
+  font-size: 1.3rem;
+  color: #ee9b00;
+  text-align: center;
+}
+
+.card-footer{
+  background-color: white;
+}
+
+.nftImg {
+  margin: 15px;
+  /* height: auto; */
+  /* width: 150px; */
+}
+
+
+.nftTitle{
+  font-size: 1.2rem;
+  color: #ee9b00;
+  text-align: center;
+  /* margin: 25px; */
+}
+
+
+.nftSubTitle{
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  /* margin: 25px; */
+}

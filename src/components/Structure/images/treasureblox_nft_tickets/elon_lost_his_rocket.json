@@ -1,0 +1,11 @@
+{
+    "name": "TreasureBlox X Meter",
+    "description": "Elon Lost His Rocket Entry Ticket",
+    "image": "https://api.treasureblox.finance/nft/v1/elon_lost_his_rocket.png",
+    "attributes": [
+        {
+            "trait_type": "Winner",
+            "value": 0
+        }
+    ]
+}

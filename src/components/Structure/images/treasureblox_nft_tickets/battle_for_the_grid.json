@@ -1,0 +1,11 @@
+{
+    "name": "TreasureBlox X Meter",
+    "description": "Battle For The Grid Entry Ticket",
+    "image": "https://api.treasureblox.finance/nft/v1/battle_for_the_grid.png",
+    "attributes": [
+        {
+            "trait_type": "Winner",
+            "value": 0
+        }
+    ]
+}

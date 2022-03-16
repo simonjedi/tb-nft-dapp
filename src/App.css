@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
+.background {
+    /* The image used */
+    /* background-image: url(./treasure1.jpg); */
+    /* background: url(./BloxEscape/assets/fortblox.png) no-repeat center center fixed; */
+
+
+    /* background: url(./background2.jpg) no-repeat center center fixed; */
+    /* background: url(./background1.png) no-repeat center center fixed; */
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #071C2D;
+
+    /* background-attachment: fixed; */
+    /* Full height */
+    width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loadingbackground {
+    /* The image used */
+    /* background-image: url(./treasure1.jpg); */
+    /* background: url(./BloxEscape/assets/fortblox.png) no-repeat center center fixed; */
+
+
+    /* background: url(./background2.jpg) no-repeat center center fixed; */
+    /* background: url(./background1.png) no-repeat center center fixed; */
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #000000;
+
+    /* background-attachment: fixed; */
+    /* Full height */
+    width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+/* @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+
+
+.customFont{
+  font-family: 'Staatliches', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.spaceTopHome{
+  margin-top: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.center{
   align-items: center;
+}
+.aligned{
+  display: flex;
+  margin: 40px auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+
+}
+
+
+.customBodyMiniGame {
+  background-color: #001219;
+  border-width: 0px;
+  color: #172774;
+  border-radius: 0px 0px 10px 10px;
+  text-align: center;
+
+}
+
+.cardRoundedMiniGame{
+  border-radius: 15px 50px 0px 0px;
+  color: #172774;
+
+
+}
+
+.MiniGameTitle{
+  font-size: 1.4rem;
+  color: #ee9b00;
+  text-align: center;
+
+}
+
+.MiniGameSubTitle{
+  font-size: 1.2rem;
+  color: #ee9b00;
+  text-align: center;
+
+}
+
+.MiniGameDetails{
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+
+}
+
+
+.customMobileButton{
+  background-color: #ee9b00;
+  border-color: #ee9b00;
+  outline-color: #ee9b00;
+  color: #001219;
+  /* height: 35px; */
+  width: 150px;
+  font-size: 1.2rem;
+}
+
+
+.customMobileButton:hover{
+  background-color: #005f73;
+  border-color: #005f73;
+  outline-color: #005f73;
   color: white;
+  animation: wobble 1s 1;
 }
 
-.App-link {
-  color: #61dafb;
+.landingPageFont{
+  color:white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loadingDataFont{
+  color:white;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:80vh;
+}
+.caption{
+  display: block;
+}
+
+.list-group-mine .list-group-item {
+  background-color: #16b330;
+}
+
+.list-group-not-complete .list-group-item {
+  background-color: #7a7979;
+}
+
+.hr {
+  border: none;
+  border-top: 3px dashed #ee9b00;
+}
+
+.collection-background{
+  background-color: #071C2D;
+}
+
+
+

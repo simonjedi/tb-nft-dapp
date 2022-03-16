@@ -1,0 +1,55 @@
+.MyBakground{
+  background: #001219;
+  font-size: 1.1rem;
+
+}
+
+.customLinks{
+    color: rgba(255,255,255,.5);
+    padding-right: .5rem;
+    padding-left: .5rem;
+    display: block;
+    padding: .5rem .5rem;
+    text-decoration: none;
+    background-color: transparent;
+}
+.customLinks:hover {
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+
+}
+
+.customWalletButton{
+  background-color: #ee9b00;
+  border-color: #ee9b00;
+  outline-color: #ee9b00;
+  color: #001219;
+  height: 40px;
+  width: 150px;
+  font-size: 1rem;
+}
+
+
+.customWalletButton:hover{
+  background-color: #005f73;
+  border-color: #005f73;
+  outline-color: #005f73;
+  color: white;
+  animation: wobble 1s 1;
+}
+
+
+@keyframes wobble {
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

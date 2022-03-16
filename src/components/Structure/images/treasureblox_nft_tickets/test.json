@@ -1,0 +1,11 @@
+{
+    "name": "Troy",
+    "description": "Captain Troy 'Mighty' Armstrong",
+    "image": "https://api.treasureblox.finance/nft/#IMAGE#.png",
+    "attributes": [
+        {
+            "trait_type": "Power",
+            "value": 100
+        }
+    ]
+}

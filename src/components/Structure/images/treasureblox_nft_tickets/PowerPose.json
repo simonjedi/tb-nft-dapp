@@ -1,0 +1,11 @@
+{
+    "name": "Troy",
+    "description": "Captain Troy 'Mighty' Armstrong",
+    "image": "https://www.treasureblox.finance/static/media/PowerPose.27c578a4.gif",
+    "attributes": [
+        {
+            "trait_type": "Power",
+            "value": 100
+        }
+    ]
+}
