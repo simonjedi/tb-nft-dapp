@@ -6,6 +6,7 @@
   "proxy": "https://api.treasureblox.finance/",
   "dependencies": {
     "@celo/wallet-walletconnect": "^1.3.3",
+    "@coinbase/wallet-sdk": "^3.0.4",
     "@metamask/eth-sig-util": "^4.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.3",
