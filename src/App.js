@@ -22,7 +22,7 @@ import { useWallet, UseWalletProvider } from 'use-wallet'
 import img1 from './components/Structure/images/PowerPose.gif';
 import img2 from "./components/Structure/images/NFT_LOOTBOX_HEADER.png"
 
-
+ 
 import {
   BrowserRouter as Router,
   Switch,
