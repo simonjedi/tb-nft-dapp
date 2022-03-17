@@ -280,8 +280,6 @@ const App = (props) => {
                 myArray.push(json);
                 return response;
               });
-
-        
              
       }
       // console.log(myArray)
