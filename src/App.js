@@ -289,9 +289,7 @@ const App = (props) => {
         //         // setData([json])
         //       });
 
-        nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
-
-        console.log(nft_metadata)
+      
 
           fetch(nft_metadata
             ,{
