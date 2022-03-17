@@ -351,11 +351,11 @@ const App = (props) => {
             var quick_bal =  await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
             balances.push(quick_bal)
             let res = await getSchemaFromApiAsync(i,nft_metadata,quick_bal);
-            console.log("res", res);
-            console.log(res,"this is the log myJson");
-            console.table(res)
+            console.log("res", res.json());
+            console.log(res.json(),"this is the log myJson");
+            console.table(res.json())
 
-            var json = res;
+            var json = res.json();
             
             myArray.push(json);
             console.log(myArray,"this is the array")
