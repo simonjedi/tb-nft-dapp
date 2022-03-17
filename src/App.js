@@ -323,7 +323,7 @@ const App = (props) => {
           nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
           console.log(nft_metadata,"nft_metadata")
 
-           fetch(nft_metadata[1].replaice(",",""))
+           fetch(nft_metadata[1].replace(",",""))
             .then(response => resolve(response.json()))
             .catch(error => {
               console.error(error);
