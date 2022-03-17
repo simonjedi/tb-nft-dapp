@@ -325,15 +325,15 @@ const App = (props) => {
      
 
       
-      let getSchemaFromApiAsync = (i) => {
+      let getSchemaFromApiAsync = async (i,nft_metadata,quick_bal) => {
         return new Promise((resolve, reject) =>  {
-          var nft_metadata =  ERC1155_CONTRACT.methods.uri(i).call();
-          var quick_bal =  ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
-          balances.push(quick_bal)
+          
+          console.log(nft_metadata,"pre nft_metadata")
+          nft_metadata = nft_metadata + '';
+          nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+          console.log(nft_metadata,"nft_metadata")
 
-          // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
-
-           fetch("v1/LootBox_MetaData/GOLD/BLUE_EYES.json")
+           fetch(nft_metadata[1])
             .then(response => resolve(response.json()))
             .catch(error => {
               console.error(error);
@@ -343,9 +343,35 @@ const App = (props) => {
         }
       
         let main = async () => {
+          
+      
+      
+              
+      
+              // console.log(my_index)
+
           for (let i = 0; i < 47; i++) {
-            let res = await getSchemaFromApiAsync(i);
+
+            if(i > 8){
+              setData(myArray)
+              setnft_balanceOf(balances)
+              setLoader(false)
+            }
+
+            setIndex(i)
+              my_index = i;
+
+            var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
+            var quick_bal =  await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
+            balances.push(quick_bal)
+            let res = await getSchemaFromApiAsync(i,nft_metadata,quick_bal);
             console.log("res", res);
+            console.log(res,"this is the log myJson");
+
+            var json = res;
+            
+            myArray.push(json);
+            console.log(myArray,"this is the array")
           }
           
           // var json = res;
@@ -357,10 +383,10 @@ const App = (props) => {
         main();
 
       // console.log(myArray)
-      // setData(myArray)
-      // setnft_balanceOf(balances)
+      setData(myArray)
+      setnft_balanceOf(balances)
 
-      // setLoader(false)
+      setLoader(false)
       // console.log(index,"index")
       // console.log(data,"data")
       // console.log(myArray,"myarray")
