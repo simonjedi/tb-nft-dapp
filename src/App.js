@@ -315,17 +315,25 @@ const App = (props) => {
              
       // }
 
+
+    
+        
+
+
+
+
+     
+
       
-      let getSchemaFromApiAsync = async (i) => {
+      let getSchemaFromApiAsync = (i) => {
         return new Promise((resolve, reject) =>  {
-          var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
-          var quick_bal = await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
+          var nft_metadata =  ERC1155_CONTRACT.methods.uri(i).call();
+          var quick_bal =  ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
           balances.push(quick_bal)
 
-        nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+          // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
 
-
-           fetch(nft_metadata[1])
+           fetch("v1/LootBox_MetaData/GOLD/BLUE_EYES.json")
             .then(response => resolve(response.json()))
             .catch(error => {
               console.error(error);
@@ -337,21 +345,22 @@ const App = (props) => {
         let main = async () => {
           for (let i = 0; i < 47; i++) {
             let res = await getSchemaFromApiAsync(i);
+            console.log("res", res);
           }
-          console.log("res", res);
-          var json = res;
+          
+          // var json = res;
                 
-          myArray.push(json);
-          console.log(myArray,"this is the array")
+          // myArray.push(json);
+          // console.log(myArray,"this is the array")
         };
       
         main();
 
       // console.log(myArray)
-      setData(myArray)
-      setnft_balanceOf(balances)
+      // setData(myArray)
+      // setnft_balanceOf(balances)
 
-      setLoader(false)
+      // setLoader(false)
       // console.log(index,"index")
       // console.log(data,"data")
       // console.log(myArray,"myarray")
