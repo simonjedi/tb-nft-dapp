@@ -285,7 +285,6 @@ const App = (props) => {
                 myArray.push(json);
                 
                 console.log(myArray,"this is the array")
-                setData([json])
               });
 
         
