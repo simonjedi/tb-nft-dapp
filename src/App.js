@@ -266,8 +266,8 @@ const App = (props) => {
         balances.push(quick_bal)
 
         // console.log(nft_metadata)
-        nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
-        console.log(nft_metadata[1])
+        // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+        // console.log(nft_metadata[1])
           // fetch(nft_metadata[1]
           //   ,{
           //     headers : { 
