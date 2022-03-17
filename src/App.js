@@ -283,13 +283,20 @@ const App = (props) => {
             ).then(function(response){
                 console.log(response,"first response")
                 console.log(response.url,"first response")
+                
+                var stringified = JSON.stringify(response);
+                var parsedObj = JSON.parse(stringified);
+                
+                console.log(response,"response stringify");
+
+
                 return response.json();
 
               }).then(function(myJson) {
                 // console.log(myJson,"this is the log myJson");
                 var stringified = JSON.stringify(myJson);
                 var parsedObj = JSON.parse(stringified);
-                 
+                
                 console.log(parsedObj);
 
 
