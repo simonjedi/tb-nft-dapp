@@ -10,12 +10,12 @@ import React, { Component, useState, useEffect } from 'react'
 
 import getWeb3 from "./getWeb3";
 
-//
+//   
 import SingleNFT from './SingleNFT';
 
 // import { NftProvider, useNft } from "use-nft"
 
-import Connection from "./Connection"; 
+import Connection from "./Connection";
  
 import { useWallet, UseWalletProvider } from 'use-wallet'
 

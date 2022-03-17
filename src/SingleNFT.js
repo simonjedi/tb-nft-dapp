@@ -36,7 +36,7 @@ const SingleNFT = (props) => {
   var bal = props.nft_balanceOf[props.id]
 // Not used as each one is a whole NFT
   // balanceOfresult = props.nft_balanceOf.substring(0, tokenContract_xyz_.length-18)
-
+console.log(props.item.image,"props.item.image")
   return(
     <div >
 
