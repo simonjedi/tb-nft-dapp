@@ -252,7 +252,7 @@ const App = (props) => {
       // var nft_metadata = await ERC1155_CONTRACT.methods.uri(0).call();
       // console.log(nft_metadata)
       // 46
-      for (let i = 0; i < 46; i++) {
+      for (let i = 0; i < 47; i++) {
         // console.log(i)
 
         if(i > 8){
@@ -272,6 +272,8 @@ const App = (props) => {
         balances.push(quick_bal)
 
         nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+
+        console.log(nft_metadata[1],"nft_metadata[1]")
           fetch(nft_metadata[1]
             ,{
               headers : { 
@@ -286,11 +288,12 @@ const App = (props) => {
                 return response.json();
               }).then(function(myJson) {
                 console.log(myJson.image,"this is the log image");
+                console.log(myJson,"this is the log myJson");
+
 
                 var json = myJson;
                 
                 myArray.push(json);
-                
                 console.log(myArray,"this is the array")
               });
 
