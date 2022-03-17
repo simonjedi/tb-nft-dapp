@@ -274,7 +274,7 @@ const App = (props) => {
         nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
 
         console.log(nft_metadata[1],"nft_metadata[1]")
-          fetch(nft_metadata
+          fetch(nft_metadata[1]
             ,{
               headers : { 
                 'Content-Type': 'application/json',
@@ -282,8 +282,8 @@ const App = (props) => {
               }
             }
             ).then(function(response){
-                // console.log(response,"first response")
-                // console.log(response.url,"first response")
+                console.log(response,"first response")
+                console.log(response.url,"first response")
 
                 return response.json();
               }).then(function(myJson) {
