@@ -314,16 +314,6 @@ const App = (props) => {
         
              
       // }
-
-
-    
-        
-
-
-
-
-     
-
       
       let getSchemaFromApiAsync = async (i,nft_metadata,quick_bal) => {
         return new Promise((resolve, reject) =>  {
@@ -333,7 +323,7 @@ const App = (props) => {
           nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
           console.log(nft_metadata,"nft_metadata")
 
-           fetch(nft_metadata[1])
+           fetch(nft_metadata[1].replaice(",",""))
             .then(response => resolve(response.json()))
             .catch(error => {
               console.error(error);
@@ -343,11 +333,7 @@ const App = (props) => {
         }
       
         let main = async () => {
-          
-      
-      
-              
-      
+   
               // console.log(my_index)
 
           for (let i = 0; i < 47; i++) {
