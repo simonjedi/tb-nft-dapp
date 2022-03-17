@@ -286,7 +286,11 @@ const App = (props) => {
                 return response.json();
 
               }).then(function(myJson) {
-                console.log(myJson,"this is the log myJson");
+                // console.log(myJson,"this is the log myJson");
+                var stringified = JSON.stringify(myJson);
+                var parsedObj = JSON.parse(stringified);
+                 
+                console.log(parsedObj);
 
 
                 // var json = myJson;
