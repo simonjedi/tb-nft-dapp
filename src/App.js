@@ -323,17 +323,29 @@ const App = (props) => {
           // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
           // console.log(nft_metadata,"nft_metadata")
 
-           fetch(nft_metadata,{
-            // headers : { 
-            //             'Content-Type': 'application/json',
-            //             'Accept': 'application/json'
-            //           }
-            mode: "no-cors"
-            }).then(response => resolve(response.json()))
-            .catch(error => {
-              console.error(error);
-              reject(error);
-            });
+          
+          fetch(nft_metadata, {
+            method: "GET",
+            headers: {
+               "Content-Type": "application/json"
+            },
+            credentials: "include"
+         })
+         .then((response) => {
+             console.log(response);
+             try {
+                 JSON.parse(response)
+             }
+             catch(err){
+                 console.log("parsing err ",err)
+             }
+        })
+        .catch((err)=>{
+            console.log("err ",err)
+        });
+
+
+          
           })
         }
       
