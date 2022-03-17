@@ -280,7 +280,9 @@ const App = (props) => {
                 console.log(response,"first response")
                 return response.json();
               }).then(function(myJson) {
-                console.log(myJson,"this is the log");
+                console.log(myJson[0],"this is the log");
+
+                console.log(myJson[1],"this is the log");
                 // var json = myJson;
                 
                 // myArray.push(json);
