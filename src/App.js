@@ -319,11 +319,11 @@ const App = (props) => {
         return new Promise((resolve, reject) =>  {
           
           console.log(nft_metadata,"pre nft_metadata")
-          nft_metadata = nft_metadata + '';
-          nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
-          console.log(nft_metadata,"nft_metadata")
+          // nft_metadata = nft_metadata + '';
+          // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+          // console.log(nft_metadata,"nft_metadata")
 
-           fetch(nft_metadata[1].replace(",",""))
+           fetch(nft_metadata)
             .then(response => resolve(response.json()))
             .catch(error => {
               console.error(error);
