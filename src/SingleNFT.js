@@ -44,12 +44,12 @@ const SingleNFT = (props) => {
   // var json_url = props.item.image.split("https://api.treasureblox.finance/");
 
   // var final_img = base_url.concat(json_url[1]);  
-console.log(props.item.image,"props.item.image")
+// console.log(props.item.image,"props.item.image")
 
   return(
     <div >
 
-    {(bal >= 1)?(
+    {/* {(bal >= 1)?(
       <div>
           <Card.Img variant="top"  src={props.item.image} key={props.item.image} alt="Logo" className='customRounded nftImg'/>
             <div className="nftTitle">Name: {props.item.name}</div>
@@ -67,7 +67,7 @@ console.log(props.item.image,"props.item.image")
           
 
       </div>
-    )}
+    )} */}
 
          
 

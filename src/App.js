@@ -285,7 +285,7 @@ const App = (props) => {
 
                 return response.json();
               }).then(function(myJson) {
-                // console.log(myJson,"this is the log");
+                console.log(myJson.image,"this is the log image");
 
                 var json = myJson;
                 
@@ -308,7 +308,7 @@ const App = (props) => {
     }
     start()
 
-    
+
     // const timer = window.setInterval( async() => {
     //   start();
     // }, 15000);
