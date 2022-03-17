@@ -319,33 +319,16 @@ const App = (props) => {
         return new Promise((resolve, reject) =>  {
           
           console.log(nft_metadata,"pre nft_metadata")
-          // nft_metadata = nft_metadata + '';
-          // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
-          // console.log(nft_metadata,"nft_metadata")
+          nft_metadata = nft_metadata + '';
+          nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+          console.log(nft_metadata,"nft_metadata")
 
-          
-          fetch(nft_metadata, {
-            method: "GET",
-            headers: {
-               "Content-Type": "application/json"
-            },
-            credentials: "include"
-         })
-         .then((response) => {
-             console.log(response);
-             try {
-                 JSON.parse(response)
-             }
-             catch(err){
-                 console.log("parsing err ",err)
-             }
-        })
-        .catch((err)=>{
-            console.log("err ",err)
-        });
-
-
-          
+           fetch(nft_metadata[1])
+            .then(response => resolve(response.json()))
+            .catch(error => {
+              console.error(error);
+              reject(error);
+            });
           })
         }
       
@@ -370,6 +353,7 @@ const App = (props) => {
             let res = await getSchemaFromApiAsync(i,nft_metadata,quick_bal);
             console.log("res", res);
             console.log(res,"this is the log myJson");
+            console.table(res)
 
             var json = res;
             
