@@ -280,21 +280,36 @@ const App = (props) => {
                 'Accept': 'application/json'
               }
             }
-            ).then(function(response){
-               
+            ).then(response => response.json())
+            .then(response => {
+            
+                console.log(response)
 
-                return response.json();
-
-              }).then(function(myJson) {
-                // console.log(myJson,"this is the log myJson");
-                
-
-
-                var json = myJson;
+                var json = response;
                 
                 myArray.push(json);
                 console.log(myArray,"this is the array")
-              });
+            
+            });
+            
+            
+            
+            
+            // .then(function(response){
+               
+
+            //     return response.json();
+
+            //   }).then(function(myJson) {
+            //     // console.log(myJson,"this is the log myJson");
+                
+
+
+            //     var json = myJson;
+                
+            //     myArray.push(json);
+            //     console.log(myArray,"this is the array")
+            //   });
 
         
              
