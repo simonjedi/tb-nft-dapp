@@ -265,8 +265,6 @@ const App = (props) => {
         balances.push(quick_bal)
 
         nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
-
-        console.log(nft_metadata[1],"nft_metadata[1]")
           fetch(nft_metadata[1]
             ,{
               headers : { 
@@ -275,13 +273,22 @@ const App = (props) => {
               }
             }
             ).then(function(response){
-                console.log(response,"first response")
+                // console.log(response,"first response")
                 // console.log(response.url,"first response")
-                var json = response;
+
+                return response.json();
+              }).then(function(myJson) {
+                // console.log(myJson,"this is the log");
+
+                var json = myJson;
                 
                 myArray.push(json);
-                return response;
+                
+                console.log(myArray,"this is the array")
+                setData([json])
               });
+
+        
              
       }
       // console.log(myArray)
