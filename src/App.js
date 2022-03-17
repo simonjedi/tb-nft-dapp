@@ -316,11 +316,11 @@ const App = (props) => {
       // }
 
       
-      let getSchemaFromApiAsync = (i) => {
+      let getSchemaFromApiAsync = async (i) => {
         return new Promise((resolve, reject) =>  {
           var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
-        var quick_bal = await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
-        balances.push(quick_bal)
+          var quick_bal = await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
+          balances.push(quick_bal)
 
         nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
 
