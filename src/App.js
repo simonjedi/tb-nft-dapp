@@ -268,25 +268,47 @@ const App = (props) => {
         // console.log(nft_metadata)
         // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
         // console.log(nft_metadata[1])
-          // fetch(nft_metadata[1]
-          //   ,{
-          //     headers : { 
-          //       'Content-Type': 'application/json',
-          //       'Accept': 'application/json'
-          //     }
-          //   }
-          //   ).then(function(response){
-          //       // console.log(response)
-          //       return response.json();
-          //     }).then(function(myJson) {
-          //       // console.log(myJson,"this is the log");
-          //       var json = myJson;
+        //   fetch(nft_metadata[1]
+        //     ,{
+        //       headers : { 
+        //         'Content-Type': 'application/json',
+        //         'Accept': 'application/json'
+        //       }
+        //     }
+        //     ).then(function(response){
+        //         // console.log(response)
+        //         return response.json();
+        //       }).then(function(myJson) {
+        //         // console.log(myJson,"this is the log");
+        //         var json = myJson;
                 
-          //       myArray.push(json);
+        //         myArray.push(json);
                 
-          //       // console.log(myArray)
-          //       // setData([json])
-          //     });
+        //         // console.log(myArray)
+        //         // setData([json])
+        //       });
+
+        nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+        console.log(nft_metadata)
+          fetch(nft_metadata
+            ,{
+              headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              }
+            }
+            ).then(function(response){
+                // console.log(response)
+                return response.json();
+              }).then(function(myJson) {
+                // console.log(myJson,"this is the log");
+                var json = myJson;
+                
+                myArray.push(json);
+                
+                // console.log(myArray)
+                // setData([json])
+              });
              
       }
       // console.log(myArray)
