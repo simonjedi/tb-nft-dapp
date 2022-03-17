@@ -49,7 +49,7 @@ console.log(props.item.image,"props.item.image")
   return(
     <div >
 
-    {/* {(bal >= 1)?(
+    {(bal >= 1)?(
       <div>
           <Card.Img variant="top"  src={props.item.image} key={props.item.image} alt="Logo" className='customRounded nftImg'/>
             <div className="nftTitle">Name: {props.item.name}</div>
@@ -67,7 +67,7 @@ console.log(props.item.image,"props.item.image")
           
 
       </div>
-    )} */}
+    )}
 
          
 

@@ -244,8 +244,7 @@ const App = (props) => {
    
 
 
-    const timer = window.setInterval( async() => {
-
+      async function start() {
       myArray = []
       balances = []
 
@@ -255,6 +254,14 @@ const App = (props) => {
       // 46
       for (let i = 0; i < 46; i++) {
         // console.log(i)
+
+        if(i > 8){
+          setData(myArray)
+          setnft_balanceOf(balances)
+          setLoader(false)
+        }
+
+
         setIndex(i)
         my_index = i;
 
@@ -298,8 +305,14 @@ const App = (props) => {
       // console.log(index,"index")
       // console.log(data,"data")
       // console.log(myArray,"myarray")
+    }
+    start()
 
-    }, 10000);
+    
+    // const timer = window.setInterval( async() => {
+    //   start();
+    // }, 15000);
+    
 
     
     
