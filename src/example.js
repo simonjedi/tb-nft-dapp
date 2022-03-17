@@ -6,25 +6,15 @@ import { NftProvider, useNft } from "use-nft"
 
 import FiredGuys from '../../build/contracts/Flock.json'
 
-
-
 const contractAddress = '0x892e21f1105E663d2fDAD28356FbC63bbCB13d09'
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 
-
-
 // get the end user
 const signer = provider.getSigner();
 
-
-
-
 // get the smart contract
 const contract = new ethers.Contract(contractAddress, FiredGuys.abi, signer);
-
-
-
 
 function Home() {
 
