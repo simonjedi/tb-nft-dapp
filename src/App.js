@@ -253,7 +253,7 @@ const App = (props) => {
       // var nft_metadata = await ERC1155_CONTRACT.methods.uri(0).call();
       // console.log(nft_metadata)
       // 46
-      for (let i = 0; i < 46; i++) {
+      for (let i = 0; i < 10; i++) {
         // console.log(i)
         setIndex(i)
         my_index = i;
@@ -275,7 +275,9 @@ const App = (props) => {
             ).then(function(response){
                 console.log(response,"first response")
                 // console.log(response.url,"first response")
-                myArray.push(response);
+                var json = response;
+                
+                myArray.push(json);
                 return response;
               });
 
