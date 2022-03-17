@@ -242,7 +242,7 @@ const App = (props) => {
     settokenContract_address(tokenContract_Address)
 
    
-
+    
 
       async function start() {
       myArray = []
@@ -251,69 +251,102 @@ const App = (props) => {
 
       // var nft_metadata = await ERC1155_CONTRACT.methods.uri(0).call();
       // console.log(nft_metadata)
-      // 46
-      for (let i = 0; i < 47; i++) {
-        // console.log(i)
+      // 47
+      // for (let i = 0; i < 47; i++) {
+      //   // console.log(i)
 
-        if(i > 8){
-          setData(myArray)
-          setnft_balanceOf(balances)
-          setLoader(false)
-        }
+      //   if(i > 8){
+      //     setData(myArray)
+      //     setnft_balanceOf(balances)
+      //     setLoader(false)
+      //   }
 
 
-        setIndex(i)
-        my_index = i;
+      //   setIndex(i)
+      //   my_index = i;
 
-        // console.log(my_index)
+      //   // console.log(my_index)
        
-        var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
+      //   var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
+      //   var quick_bal = await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
+      //   balances.push(quick_bal)
+
+      //   nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+
+      //     fetch(nft_metadata
+      //       ,{
+      //         headers : { 
+      //           'Content-Type': 'application/json',
+      //           'Accept': 'application/json'
+      //         }
+      //       }
+      //       ).then(response => response.json())
+      //       .then(response => {
+            
+      //           console.log(response)
+
+      //           var json = response;
+                
+      //           myArray.push(json);
+      //           console.log(myArray,"this is the array")
+            
+      //       });
+            
+            
+            
+            
+      //       // .then(function(response){
+               
+
+      //       //     return response.json();
+
+      //       //   }).then(function(myJson) {
+      //       //     // console.log(myJson,"this is the log myJson");
+                
+
+
+      //       //     var json = myJson;
+                
+      //       //     myArray.push(json);
+      //       //     console.log(myArray,"this is the array")
+      //       //   });
+
+        
+             
+      // }
+
+      
+      let getSchemaFromApiAsync = (i) => {
+        return new Promise((resolve, reject) =>  {
+          var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
         var quick_bal = await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
         balances.push(quick_bal)
 
         nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
 
-          fetch(nft_metadata
-            ,{
-              headers : { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-              }
-            }
-            ).then(response => response.json())
-            .then(response => {
-            
-                console.log(response)
 
-                var json = response;
-                
-                myArray.push(json);
-                console.log(myArray,"this is the array")
-            
+           fetch(nft_metadata[1])
+            .then(response => resolve(response.json()))
+            .catch(error => {
+              console.error(error);
+              reject(error);
             });
-            
-            
-            
-            
-            // .then(function(response){
-               
-
-            //     return response.json();
-
-            //   }).then(function(myJson) {
-            //     // console.log(myJson,"this is the log myJson");
+          })
+        }
+      
+        let main = async () => {
+          for (let i = 0; i < 47; i++) {
+            let res = await getSchemaFromApiAsync(i);
+          }
+          console.log("res", res);
+          var json = res;
                 
+          myArray.push(json);
+          console.log(myArray,"this is the array")
+        };
+      
+        main();
 
-
-            //     var json = myJson;
-                
-            //     myArray.push(json);
-            //     console.log(myArray,"this is the array")
-            //   });
-
-        
-             
-      }
       // console.log(myArray)
       setData(myArray)
       setnft_balanceOf(balances)
