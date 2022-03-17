@@ -284,7 +284,7 @@ const App = (props) => {
                 console.log(response,"first response")
                 console.log(response.url,"first response")
                 
-                var stringified = JSON.stringify(response);
+                var stringified = JSON.stringify(response.json());
                 var parsedObj = JSON.parse(stringified);
                 
                 console.log(response,"response stringify");
