@@ -334,8 +334,8 @@ const App = (props) => {
 
           fetch("https://api.treasureblox.finance/v1/LootBox_MetaData/GOLD/BLUE_EYES.json",{mode:"cors"})
            .then(function(response){
-             console.log(response.json(),"items")
-             console.table(response.json(),"items")
+            //  console.log(response.json(),"items")
+            //  console.table(response.json(),"items")
 
               return response.json();
             })
@@ -370,6 +370,7 @@ const App = (props) => {
             console.table(res)
 
             var json = res;
+            console.log(json,"<----this is my json")
             
             myArray.push(json);
             console.log(myArray,"this is the array")
