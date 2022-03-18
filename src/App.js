@@ -244,7 +244,7 @@ const App = (props) => {
     settokenContract_address(tokenContract_Address)
 
    
-    
+   
 
       async function start() {
       myArray = []
@@ -327,7 +327,7 @@ const App = (props) => {
           nft_metadata = nft_metadata.split("https://api.treasureblox.finance/,");
           // console.log(nft_metadata[1],"nft_metadata")
 
-           fetch(nft_metadata[1],{
+           fetch(nft_metadata,{
                     headers : { 
                       'Content-Type': 'application/json',
                       'Accept': 'application/json'
