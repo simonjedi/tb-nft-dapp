@@ -319,19 +319,29 @@ const App = (props) => {
 
       // http://localhost:3000/,/v1/LootBox_MetaData/CARBON/GENTLEMAN.json
 
+
+      
+
+
+
       let getSchemaFromApiAsync = async (i,nft_metadata,quick_bal) => {
         return new Promise((resolve, reject) =>  {
           
           // console.log(nft_metadata,"pre nft_metadata")
           nft_metadata = nft_metadata + '';
-          nft_metadata = nft_metadata.split("https://api.treasureblox.finance/,");
+          nft_metadata = nft_metadata.split("https://api.treasureblox.finance");
           // console.log(nft_metadata[1],"nft_metadata")
 
-           fetch(nft_metadata,{
+          fetch(nft_metadata[1],
+            {
+                      
+
                     headers : { 
                       'Content-Type': 'application/json',
-                      'Accept': 'application/json'
-                    }
+                      'Accept': 'application/json',
+
+                    },
+                    
                   })
            .then(function(response){
              console.log(response.json(),"items")
