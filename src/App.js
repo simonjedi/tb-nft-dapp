@@ -320,13 +320,13 @@ const App = (props) => {
       let getSchemaFromApiAsync = async (i,nft_metadata,quick_bal) => {
         return new Promise((resolve, reject) =>  {
           
-          console.log(nft_metadata,"pre nft_metadata")
+          // console.log(nft_metadata,"pre nft_metadata")
           nft_metadata = nft_metadata + '';
           nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
-          console.log(nft_metadata[1],"nft_metadata")
+          // console.log(nft_metadata[1],"nft_metadata")
 
            fetch(nft_metadata[1])
-            .then(response => resolve(response))
+            .then(response => resolve(response.json()))
             .catch(error => {
               console.error(error);
               reject(error);
@@ -347,7 +347,8 @@ const App = (props) => {
             }
 
             setIndex(i)
-              my_index = i;
+            
+            my_index = i;
 
             var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
             var quick_bal =  await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
@@ -357,7 +358,7 @@ const App = (props) => {
             console.log(res,"this is the log myJson");
             console.table(res)
 
-            var json = res.json();
+            var json = res;
             
             myArray.push(json);
             console.log(myArray,"this is the array")
