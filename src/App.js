@@ -328,13 +328,13 @@ const App = (props) => {
         return new Promise((resolve, reject) =>  {
           
           // console.log(nft_metadata,"pre nft_metadata")
-          nft_metadata = nft_metadata + '';
-          nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+          // nft_metadata = nft_metadata + '';
+          // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
           // console.log(nft_metadata[1],"nft_metadata")
 
-          fetch("https://api.treasureblox.finance/v1/LootBox_MetaData/GOLD/BLUE_EYES.json",{mode:"cors"})
+          fetch(nft_metadata,{mode:"cors"})
            .then(function(response){
-            //  console.log(response.json(),"items")
+            //  console.log(response,"items")
             //  console.table(response.json(),"items")
 
               return response.json();
