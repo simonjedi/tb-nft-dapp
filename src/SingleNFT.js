@@ -43,11 +43,11 @@ const SingleNFT = (props) => {
     {(bal >= 1)?(
       <div>
           <Card.Img variant="top"  src={props.item.image} key={props.item.image} alt="Logo" className='customRounded nftImg'/>
-            <div className="nftTitle">Name: {props.item.name}</div>
-            {/* <div className="nftSubTitle">TRAIT TYPE: {trait[0].toUpperCase()} {trait[1].toUpperCase()}</div> */}
-            {/* <div className="nftSubTitle">ITEM DESCRIPTION: {props.item.attributes[0].value}</div> */}
+            {/* <div className="nftTitle">Name: {props.item.name}</div>
+            <div className="nftSubTitle">TRAIT TYPE: {trait[0].toUpperCase()} {trait[1].toUpperCase()}</div>
+            <div className="nftSubTitle">ITEM DESCRIPTION: {props.item.attributes[0].value}</div>
             <div className="nftSubTitle">YOUR BALANCE:  {bal}</div>
-            <div className="nftSubTitle">TOKEN ID:  {props.id}</div>
+            <div className="nftSubTitle">TOKEN ID:  {props.id}</div> */}
 
 
           <br/>
