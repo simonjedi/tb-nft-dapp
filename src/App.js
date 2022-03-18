@@ -112,7 +112,7 @@ const App = (props) => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Json
-  var [data,setData]=useState([]);
+  var [data,setData]=useState([{}]);
   var tempArray = []
 
   // Modal
@@ -326,7 +326,7 @@ const App = (props) => {
           // console.log(nft_metadata[1],"nft_metadata")
 
            fetch(nft_metadata[1])
-            .then(response => resolve(response))
+            .then(response => resolve(response.json()))
             .catch(error => {
               console.error(error);
               reject(error);
@@ -354,7 +354,6 @@ const App = (props) => {
             var quick_bal =  await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
             balances.push(quick_bal)
             let res = await getSchemaFromApiAsync(i,nft_metadata,quick_bal);
-            console.log("res", res);
             console.log(res,"this is the log myJson");
             console.table(res)
 
