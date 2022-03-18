@@ -254,68 +254,68 @@ const App = (props) => {
       // var nft_metadata = await ERC1155_CONTRACT.methods.uri(0).call();
       // console.log(nft_metadata)
       // 47
-      // for (let i = 0; i < 47; i++) {
-      //   // console.log(i)
+      for (let i = 0; i < 47; i++) {
+        // console.log(i)
 
-      //   if(i > 8){
-      //     setData(myArray)
-      //     setnft_balanceOf(balances)
-      //     setLoader(false)
-      //   }
+        if(i > 8){
+          setData(myArray)
+          setnft_balanceOf(balances)
+          setLoader(false)
+        }
 
 
-      //   setIndex(i)
-      //   my_index = i;
+        setIndex(i)
+        my_index = i;
 
-      //   // console.log(my_index)
+        // console.log(my_index)
        
-      //   var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
-      //   var quick_bal = await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
-      //   balances.push(quick_bal)
+        var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
+        var quick_bal = await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
+        balances.push(quick_bal)
 
-      //   nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+        nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
 
-      //     fetch(nft_metadata
-      //       ,{
-      //         headers : { 
-      //           'Content-Type': 'application/json',
-      //           'Accept': 'application/json'
-      //         }
-      //       }
-      //       ).then(response => response.json())
-      //       .then(response => {
+          fetch(nft_metadata
+            ,{mode:"cors",
+              headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              }
+            }
+            ).then(response => response.json())
+            .then(response => {
             
-      //           console.log(response)
+                console.log(response)
 
-      //           var json = response;
+                var json = response;
                 
-      //           myArray.push(json);
-      //           console.log(myArray,"this is the array")
+                myArray.push(json);
+                console.log(myArray,"this is the array")
             
-      //       });
-            
-            
+            });
             
             
-      //       // .then(function(response){
+            
+            
+            // .then(function(response){
                
 
-      //       //     return response.json();
+            //     return response.json();
 
-      //       //   }).then(function(myJson) {
-      //       //     // console.log(myJson,"this is the log myJson");
+            //   }).then(function(myJson) {
+            //     // console.log(myJson,"this is the log myJson");
                 
 
 
-      //       //     var json = myJson;
+            //     var json = myJson;
                 
-      //       //     myArray.push(json);
-      //       //     console.log(myArray,"this is the array")
-      //       //   });
+            //     myArray.push(json);
+            //     console.log(myArray,"this is the array")
+            //   });
 
         
              
-      // }
+      }
 
       // http://localhost:3000/,/v1/LootBox_MetaData/CARBON/GENTLEMAN.json
 
@@ -324,65 +324,65 @@ const App = (props) => {
 
 
 
-      let getSchemaFromApiAsync = async (i,nft_metadata,quick_bal) => {
-        return new Promise((resolve, reject) =>  {
+      // let getSchemaFromApiAsync = async (i,nft_metadata,quick_bal) => {
+      //   return new Promise((resolve, reject) =>  {
           
-          // console.log(nft_metadata,"pre nft_metadata")
-          // nft_metadata = nft_metadata + '';
-          // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
-          // console.log(nft_metadata[1],"nft_metadata")
+      //     // console.log(nft_metadata,"pre nft_metadata")
+      //     // nft_metadata = nft_metadata + '';
+      //     // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+      //     // console.log(nft_metadata[1],"nft_metadata")
 
-          fetch(nft_metadata,{mode:"cors"})
-           .then(function(response){
-            //  console.log(response,"items")
-            //  console.table(response.json(),"items")
+      //     fetch(nft_metadata,{mode:"cors"})
+      //      .then(function(response){
+      //       //  console.log(response,"items")
+      //       //  console.table(response.json(),"items")
 
-              return response.json();
-            })
-            .catch(error => {
-              console.error(error);
-              reject(error);
-            });
-          })
-        }
+      //         return response.json();
+      //       })
+      //       .catch(error => {
+      //         console.error(error);
+      //         reject(error);
+      //       });
+      //     })
+      //   }
       
-        let main = async () => {
+      //   let main = async () => {
    
-              // console.log(my_index)
+      //         // console.log(my_index)
 
-          for (let i = 0; i < 47; i++) {
+      //     for (let i = 0; i < 47; i++) {
 
-            if(i > 8){
-              setData(myArray)
-              setnft_balanceOf(balances)
-              setLoader(false)
-            }
+      //       if(i > 8){
+      //         setData(myArray)
+      //         setnft_balanceOf(balances)
+      //         setLoader(false)
+      //       }
 
-            setIndex(i)
+      //       setIndex(i)
             
-            my_index = i;
+      //       my_index = i;
 
-            var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
-            var quick_bal =  await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
-            balances.push(quick_bal)
-            let res = await getSchemaFromApiAsync(i,nft_metadata,quick_bal);
-            console.log(res,"this is the log myJson");
-            console.table(res)
+      //       var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
+      //       var quick_bal =  await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
+      //       balances.push(quick_bal)
+      //       let res = await getSchemaFromApiAsync(i,nft_metadata,quick_bal);
+      //       console.log(res,"this is the log myJson");
+      //       console.table(res)
 
-            var json = res;
-            console.log(json,"<----this is my json")
+      //       var json = res;
+      //       console.log(json,"<----this is my json")
             
-            myArray.push(json);
-            console.log(myArray,"this is the array")
-          }
+      //       myArray.push(json);
+      //       console.log(myArray,"this is the array")
+      //     }
           
-          // var json = res;
+      //     // var json = res;
                 
-          // myArray.push(json);
-          // console.log(myArray,"this is the array")
-        };
+      //     // myArray.push(json);
+      //     // console.log(myArray,"this is the array")
+      //   };
       
-        main();
+      //   main();
 
       // console.log(myArray)
       setData(myArray)
