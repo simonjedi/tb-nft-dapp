@@ -316,6 +316,9 @@ const App = (props) => {
         
              
       // }
+
+      
+
       
       let getSchemaFromApiAsync = async (i,nft_metadata,quick_bal) => {
         return new Promise((resolve, reject) =>  {
