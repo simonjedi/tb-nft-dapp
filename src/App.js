@@ -326,7 +326,7 @@ const App = (props) => {
           // console.log(nft_metadata[1],"nft_metadata")
 
            fetch(nft_metadata[1])
-            .then(response => resolve(response.json()))
+            .then(response => resolve(response))
             .catch(error => {
               console.error(error);
               reject(error);
