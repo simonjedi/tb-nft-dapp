@@ -334,8 +334,8 @@ const App = (props) => {
 
           fetch("https://api.treasureblox.finance/v1/LootBox_MetaData/GOLD/BLUE_EYES.json",{mode:"cors"})
            .then(function(response){
-            //  console.log(response.json(),"items")
-             console.table(response,"items")
+             console.log(response.json(),"items")
+             console.table(response.json(),"items")
 
               return response.json();
             })
