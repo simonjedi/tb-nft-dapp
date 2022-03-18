@@ -306,8 +306,7 @@ const App = (props) => {
 
           nft_metadata = nft_metadata.split("https://api.treasureblox.finance/,");
 
-          getSchemaFromApiAsync()
-          
+          let res = await getSchemaFromApiAsync(i,nft_metadata,quick_bal);
 
         }
     }
