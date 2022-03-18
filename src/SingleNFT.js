@@ -24,12 +24,12 @@ const SingleNFT = (props) => {
   // Balance of NFTs
 
   // Transform Json Element
-  var trait = props.item.attributes[0].trait_type.split("_")
-  if (trait[1]) {
+  // var trait = props.item.attributes[0].trait_type.split("_")
+  // if (trait[1]) {
     
-  } else {
-    trait[1] = ""
-  }
+  // } else {
+  //   trait[1] = ""
+  // }
   
   // console.log(props.item.image,"image")
   // console.log(props.nft_balanceOf[props.id],"bal")
