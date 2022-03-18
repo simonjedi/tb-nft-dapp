@@ -324,7 +324,7 @@ const App = (props) => {
           
           // console.log(nft_metadata,"pre nft_metadata")
           nft_metadata = nft_metadata + '';
-          nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+          nft_metadata = nft_metadata.split("https://api.treasureblox.finance/,");
           // console.log(nft_metadata[1],"nft_metadata")
 
            fetch(nft_metadata,{
