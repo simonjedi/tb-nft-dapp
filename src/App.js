@@ -167,7 +167,7 @@ const App = (props) => {
 
   useEffect(() => {
 
-
+ 
   const init = async() => {
 
     if (isLoading){
@@ -226,6 +226,8 @@ const App = (props) => {
     setErc1155_contract(ERC1155_CONTRACT)
     setErc1155_contract_address(ERC1155_CONTRACT_ADDRESS)
 
+
+    
 
     const LOOTBOX_CONTRACT = new web3.eth.Contract(LOOTBOX_ABI,"https://rpc.meter.io/" && "0x84502299d9E1c3d5fb207D17357D12E9F0476C89");
     const LOOTBOX_CONTRACT_ADDRESS = "0x84502299d9E1c3d5fb207D17357D12E9F0476C89"
@@ -355,7 +357,7 @@ const App = (props) => {
             console.log(res,"this is the log myJson");
             console.table(res)
 
-            var json = res;
+            var json = res.json();
             
             myArray.push(json);
             console.log(myArray,"this is the array")
