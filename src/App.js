@@ -294,6 +294,7 @@ const App = (props) => {
             
       //       });
         
+
       // }
 
       // http://localhost:3000/,/v1/LootBox_MetaData/CARBON/GENTLEMAN.json
@@ -308,19 +309,18 @@ const App = (props) => {
           
           // console.log(nft_metadata,"pre nft_metadata")
           // nft_metadata = nft_metadata + '';
-          // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
+          nft_metadata = nft_metadata.split("https://api.treasureblox.finance/,");
           // console.log(nft_metadata[1],"nft_metadata")
 
-          fetch(nft_metadata
+          fetch(nft_metadata[1]
                   ,{mode:"cors",
                     headers : { 
                       'Content-Type': 'application/json',
                       'Accept': 'application/json'
                     }
-                  })
-           .then(function(response){
-            //  console.log(response,"items")
-            //  console.table(response.json(),"items")
+                  }
+                  ).then(function(response){
+             console.log(response,"items")
 
               return response.json();
             })
@@ -351,8 +351,9 @@ const App = (props) => {
             var quick_bal =  await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
             balances.push(quick_bal)
             let res = await getSchemaFromApiAsync(i,nft_metadata,quick_bal);
-            
+
             var json = res;
+            
             myArray.push(json);
           }
           
