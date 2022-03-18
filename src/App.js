@@ -311,10 +311,17 @@ const App = (props) => {
           // nft_metadata = nft_metadata.split("https://api.treasureblox.finance/");
           // console.log(nft_metadata[1],"nft_metadata")
 
-          fetch(nft_metadata,{mode:"cors"})
+          fetch(nft_metadata
+                  ,{mode:"cors",
+                    headers : { 
+                      'Content-Type': 'application/json',
+                      'Accept': 'application/json'
+                    }
+                  })
            .then(function(response){
             //  console.log(response,"items")
             //  console.table(response.json(),"items")
+
               return response.json();
             })
             .catch(error => {
@@ -343,7 +350,6 @@ const App = (props) => {
             var nft_metadata = await ERC1155_CONTRACT.methods.uri(i).call();
             var quick_bal =  await ERC1155_CONTRACT.methods.balanceOf(accounts[0],i).call();
             balances.push(quick_bal)
-
             let res = await getSchemaFromApiAsync(i,nft_metadata,quick_bal);
             
             var json = res;
