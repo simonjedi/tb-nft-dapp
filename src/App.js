@@ -334,9 +334,7 @@ const App = (props) => {
 
           fetch(nft_metadata[1],{mode:'cors'})
            .then(function(response){
-             console.log(response.json(),"items")
              console.table(response,"items")
-
               return response.json();
             })
             .catch(error => {
