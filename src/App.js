@@ -36,9 +36,9 @@ import { Helmet } from 'react-helmet';
 
 import axios from "axios";
 
-import ABI from './erc1155.json'
-import LOOTBOX_ABI from './LootboxABI.json'
-import TOKEN_ABI from './TokenABI.json'
+import ABI from './abi/erc1155.json'
+import LOOTBOX_ABI from './abi/LootboxABI.json'
+import TOKEN_ABI from './abi/TokenABI.json'
 
 
 
@@ -140,6 +140,8 @@ const App = (props) => {
   let myArray = []
   let balances = []
 
+  let startArray = true;
+
   const handlePlay = async() => {
 
     const allowance = await tokenContract.methods.allowance(accounts[0],LootBox_contract_address).call();
@@ -207,9 +209,10 @@ const App = (props) => {
   // Meter Testnet
   // if (currentChainId === 83) {
   // https://rpctest.meter.io/
+  // Meter Mainnet
+  // if (currentChainId === 82) {
 
-
-  if (currentChainId === 82) {
+  if (currentChainId === 83) {
 
     setIs_Meter(true)
 
@@ -220,28 +223,36 @@ const App = (props) => {
 
     setWeb3(web3)
 
-    const ERC1155_CONTRACT = new web3.eth.Contract(ABI,"https://rpc.meter.io/" && "0x4FBd2Db19de40e0fD36e91d7a848F84515a54242");
-    const ERC1155_CONTRACT_ADDRESS = "0x4FBd2Db19de40e0fD36e91d7a848F84515a54242"
+    const ERC1155_CONTRACT = new web3.eth.Contract(ABI,"https://rpctest.meter.io/" && "0xbBFc50c80DE6b1A9bc67DA308C413b8B75e7e0BF");
+    const ERC1155_CONTRACT_ADDRESS = "0xbBFc50c80DE6b1A9bc67DA308C413b8B75e7e0BF"
+
+    // const ERC1155_CONTRACT = new web3.eth.Contract(ABI,"https://rpc.meter.io/" && "0x4FBd2Db19de40e0fD36e91d7a848F84515a54242");
+    // const ERC1155_CONTRACT_ADDRESS = "0x4FBd2Db19de40e0fD36e91d7a848F84515a54242"
     
     setErc1155_contract(ERC1155_CONTRACT)
     setErc1155_contract_address(ERC1155_CONTRACT_ADDRESS)
 
 
-    
+    const LOOTBOX_CONTRACT = new web3.eth.Contract(LOOTBOX_ABI,"https://rpctest.meter.io/" && "0xbEAAdcD40463398Fbb2Ed5A3C7fD9990bba14d20");
+    const LOOTBOX_CONTRACT_ADDRESS = "0xbEAAdcD40463398Fbb2Ed5A3C7fD9990bba14d20"
 
-    const LOOTBOX_CONTRACT = new web3.eth.Contract(LOOTBOX_ABI,"https://rpc.meter.io/" && "0x84502299d9E1c3d5fb207D17357D12E9F0476C89");
-    const LOOTBOX_CONTRACT_ADDRESS = "0x84502299d9E1c3d5fb207D17357D12E9F0476C89"
+    // const LOOTBOX_CONTRACT = new web3.eth.Contract(LOOTBOX_ABI,"https://rpc.meter.io/" && "0x84502299d9E1c3d5fb207D17357D12E9F0476C89");
+    // const LOOTBOX_CONTRACT_ADDRESS = "0x84502299d9E1c3d5fb207D17357D12E9F0476C89"
      
     setLOOTBOX_contract(LOOTBOX_CONTRACT)
     setLOOTBOX_contract_address(LOOTBOX_CONTRACT_ADDRESS)
 
 
-    const tokenContract = new web3.eth.Contract(TOKEN_ABI,"https://rpc.meter.io/" && "0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3");
-    const tokenContract_Address = "0x84502299d9E1c3d5fb207D17357D12E9F0476C89"
-    const decimals = await tokenContract.methods.decimals().call();
+    // const tokenContract = new web3.eth.Contract(TOKEN_ABI,"https://rpctest.meter.io/" && "0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3");
+    // const tokenContract_Address = "0x84502299d9E1c3d5fb207D17357D12E9F0476C89"
 
-    settokenContract(tokenContract)
-    settokenContract_address(tokenContract_Address)
+
+    // const tokenContract = new web3.eth.Contract(TOKEN_ABI,"https://rpc.meter.io/" && "0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3");
+    // const tokenContract_Address = "0x84502299d9E1c3d5fb207D17357D12E9F0476C89"
+    // const decimals = await tokenContract.methods.decimals().call();
+
+    // settokenContract(tokenContract)
+    // settokenContract_address(tokenContract_Address)
 
    
    
@@ -257,12 +268,11 @@ const App = (props) => {
       for (let i = 0; i < 47; i++) {
         // console.log(i)
 
-        if(i > 8){
+        if(i > 8 && startArray){
+          startArray = false;
           setData(myArray)
           setnft_balanceOf(balances)
-          setLoader(false)
         }
-
 
         setIndex(i)
         my_index = i;
@@ -294,11 +304,11 @@ const App = (props) => {
             
             });
             
-            
 
-        
              
       }
+
+      
 
       // http://localhost:3000/,/v1/LootBox_MetaData/CARBON/GENTLEMAN.json
 
@@ -379,9 +389,9 @@ const App = (props) => {
     start()
 
 
-    // const timer = window.setInterval( async() => {
-    //   start();
-    // }, 15000);
+    const timer = window.setInterval( async() => {
+      start();
+    }, 30000);
     
 
     

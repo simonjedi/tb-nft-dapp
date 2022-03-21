@@ -87,16 +87,16 @@ const Connection = (props) =>  {
     const web3 = await Moralis.enableWeb3();
 
 
-    // const chainId = "0x53"; //Meter Mainnet
-    const chainId = "0x52"; //Meter Mainnet
+    const chainId = "0x53"; //Meter Testnet
+    // const chainId = "0x52"; //Meter Mainnet
 
     // const chainName = "Meter Testnet";
     const chainName = "Meter Mainnet";
 
     const currencyName = "MTR";
     const currencySymbol = "MTR";
-    // const rpcUrl = "https://rpctest.meter.io";
-    const rpcUrl = "https://rpc.meter.io";
+    const rpcUrl = "https://rpctest.meter.io";
+    // const rpcUrl = "https://rpc.meter.io";
     const blockExplorerUrl = "https://scan-warringstakes.meter.io";
     await Moralis.addNetwork(
       chainId,
@@ -130,7 +130,7 @@ const Connection = (props) =>  {
             className="d-inline-block align-middle"
           />
           </Button>
-          <Button className="btn btn-default btn-dark" onClick={bsc} >
+          {/* <Button className="btn btn-default btn-dark" onClick={bsc} >
 
           <img
             alt="treasureblox_logo"
@@ -138,7 +138,7 @@ const Connection = (props) =>  {
             width="25"
             className="d-inline-block align-middle"
           />
-          </Button>
+          </Button> */}
 
           <Button onClick={connectWallet} id="wallet-button" className="customWalletButton " >{props.accounts?(<div>Connected</div>):(<div>Connect Wallet</div>)} </Button>
 
